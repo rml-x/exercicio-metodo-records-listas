@@ -15,12 +15,41 @@ A partir de 1000 reais tomam cinco dias úteis.
 Mais de 44 horas vão para o banco de horas e não são pagos.
 */
 
+DateOnly umdiaqualquer = new(2025, 10, 10);
+Console.WriteLine(umdiaqualquer.DayOfWeek);
+Console.WriteLine(umdiaqualquer.DayOfWeek == DayOfWeek.Monday);
+Console.WriteLine(umdiaqualquer.DayOfWeek == DayOfWeek.Sunday);
+
 string horista = "Steve Trabalhos";
 
 DateOnly data1 = new(2025, 10, 3); // 3/10/2025
 TimeOnly entrada1 = new(8, 15);
 TimeOnly saida1 = new(13, 29);
 TimeSpan tempo1 = saida1 - entrada1;
+
+Dia dia1 = new Dia
+{
+    data = new(2025, 10, 3),
+    entrada = new(8, 15),
+    saida = new(13, 29)
+};
+
+Dia dia2 = new Dia
+{
+    data = new(2025, 10, 4),
+    entrada = new(8, 15),
+    saida = new(13, 29)
+};
+
+
+
+Dia[] semana = new Dia[7];
+semana[0] = dia1;
+semana[1] = dia2;
+
+
+
+Console.WriteLine(dia1);
 
 DateOnly data2 = new(2025, 10, 4); // 4/10/2025
 Console.WriteLine(data2.DayOfWeek); // 0 Domingo, 1 Segunda, 2 Terça, ....
